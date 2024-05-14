@@ -58,9 +58,10 @@
 
       }
 
-      // window.onload = () => {
-      //     filterListing("All");
-      // }
+      window.onload = () => {
+          filterListing("All");
+      }
+
 
       //navbar.ejs script
 
