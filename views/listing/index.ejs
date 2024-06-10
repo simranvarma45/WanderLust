@@ -3,9 +3,12 @@
 
     <body>
 
+        
         <div id="filters">
-
+            <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+           <div class="wrapper">
             <div class="filter">
+                
                 <button class="filter-btn" onclick="filterListing('All')" style="display: none;">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <p>
@@ -35,7 +38,7 @@
 
             </div>
 
-            
+
 
             <div class="filter">
                 <button class="filter-btn" onclick="filterListing('Mountains')">
@@ -46,7 +49,7 @@
                 </button>
 
             </div>
-            
+
 
             <div class="filter">
                 <button class="filter-btn" onclick="filterListing('Camping')">
@@ -126,14 +129,21 @@
                 </button>
 
             </div>
+            </div>
+            <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
 
+
+            
             <div class="tax-toggle">
                 <div class="form-check-reverse form-switch">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">After taxes</label>
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Total after taxes</label>
+            
                 </div>
             </div>
+        
         </div>
+        
 
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
             <% for(let list of allListings) { %>
@@ -150,7 +160,7 @@
                                     <br>
                                     &#8377;<%=list.price.toLocaleString("en-IN")%>/night &nbsp; &nbsp; <i
                                             class="tax-info">+
-                                            18% GST</i> 
+                                            18% GST</i>
                                 </p>
                             </div>
                         </div>
@@ -162,4 +172,3 @@
 
 
     </body>
-

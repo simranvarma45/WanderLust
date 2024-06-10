@@ -29,8 +29,8 @@
 
         });
 
-        //navbar h4 
-        let h4 = document.querySelector("h4");
+        //navbar h4
+        let notFound = document.getElementById("myDiv");
 
         //index.ejs script 
 
@@ -39,9 +39,7 @@
           let elements = document.querySelectorAll(".cards");
 
           elements.forEach((element) => {
-            if(!(h4.classList.contains("hide"))){
-              h4.classList.add("hide");
-            }
+
               if (value == "All") {
                   element.classList.remove("hide");
               }
@@ -72,26 +70,44 @@
         
         let cards = document.querySelectorAll(".cards");
         let check = false;
-        
+       
     
         elements.forEach((element,index)=>{
             if(element.innerText.toUpperCase().includes(searchInput.toUpperCase()) ){
-             
+                check= true;
                 cards[index].classList.remove("hide");
+                notFound.classList.add("hide");
     
             }
             else {
                 cards[index].classList.add("hide");
             }
-            if(!(cards[index].classList.contains("hide"))){
-                check= true;
-            }
+            
         }); 
         if(!check){
-         h4.classList.remove("hide");
-         throw new Error("Listing Not found!!");
-        }
-        else{
-            h4.classList.add("hide");
-        }
+         notFound.classList.remove("hide");
+         filterListing("All");
+        }  
+        
     });
+//Dragging Functionality 
+const wrapper = document.querySelector(".wrapper");
+arrowIcons = document.querySelectorAll(".icon i");
+
+let isDragging = false;
+const handleIcons = (scrollVal)=>{
+    let maxScrollableWidth = wrapper.scrollWidth-wrapper.clientWidth;
+    arrowIcons[0].parentElement.style.display = scrollVal<=0?"none":"flex";
+    arrowIcons[1].parentElement.style.display = maxScrollableWidth-scrollVal<=1?"none":"flex";
+}
+
+arrowIcons.forEach(icon=>{
+    icon.addEventListener("click",()=>{
+        
+         let scrollWidth = wrapper.scrollLeft += icon.id ==="left"? -340:340;
+         handleIcons(scrollWidth);
+    });
+});
+
+
+   
