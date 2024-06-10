@@ -63,10 +63,10 @@ sessionOptions={
 };
 
 //Root Route
- app.get("/", (req, res) => {
-    res.send('root is working fine');
-    next();
- });
+ // app.get("/", (req, res) => {
+ //    res.send('root is working fine');
+ //    next();
+ // });
 
 
 
