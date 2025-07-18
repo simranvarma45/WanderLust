@@ -17,28 +17,18 @@
     })
   })()
 
-//   let taxSwitch = document.getElementById("flexSwitchCheckDefault");
-//         taxSwitch.addEventListener("click", () => {
-//             let taxInfo = document.getElementsByClassName("tax-info");
-//             for (let info of taxInfo) {
-//                 if (info.style.display != "inline")
-//                     info.style.display = "inline";
-//                 else
-//                     info.style.display = "none";
-//             }
-
-//         });
-        window.onload = () => {
-    const taxSwitch = document.getElementById("flexSwitchCheckDefault");
-    if (taxSwitch) {
+  let taxSwitch = document.getElementById("flexSwitchCheckDefault");
         taxSwitch.addEventListener("click", () => {
-            const taxInfo = document.getElementsByClassName("tax-info");
+            let taxInfo = document.getElementsByClassName("tax-info");
             for (let info of taxInfo) {
-                info.classList.toggle("hidden");
+                if (info.style.display != "inline")
+                    info.style.display = "inline";
+                else
+                    info.style.display = "none";
             }
+
         });
-    }
-};
+     
 
 
         //navbar h4
@@ -122,4 +112,4 @@ arrowIcons.forEach(icon=>{
 });
 
 
-   
+  
