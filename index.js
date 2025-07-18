@@ -90,8 +90,8 @@ app.use((req,res,next)=>{
 
 app.use("/listing", listingRouter);
 app.use("/listing/:id/reviews", reviewRouter);
-// app.use("/",userRouter);
-app.use("/",listingRouter);
+app.use("/",userRouter);
+
 
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!!"));
